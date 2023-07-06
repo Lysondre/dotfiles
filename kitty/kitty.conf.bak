@@ -1,0 +1,16 @@
+# FONT
+font_family FiraCode Nerd Font
+font_size 12.5
+
+# CUSTOM THEMING
+background_opacity 0.9
+
+# ADVANCED
+editor nvim
+
+
+
+# BEGIN_KITTY_THEME
+# Rosé Pine Moon
+include current-theme.conf
+# END_KITTY_THEME

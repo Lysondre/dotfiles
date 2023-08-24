@@ -1,4 +1,4 @@
-@import 'waybar-colors.css';
+@import 'colors.css';
 
 * {
     /* `otf-font-awesome` is required to be installed for icons */
@@ -61,6 +61,7 @@ window#waybar.hidden {
 #pulseaudio,
 #wireplumber,
 #custom-media,
+#custom-power-menu,
 #tray,
 #mode,
 #idle_inhibitor,
@@ -68,15 +69,32 @@ window#waybar.hidden {
 #custom-launcher,
 #workspaces,
 #mpd {
-    padding: 2px 10px;
-    color: @foreground;
+    margin: 5px 10px;
+    font-weight: bold;
+}
+
+/*
+.modules-left, .modules-center, .modules-right {
     background-color: @background;
-    border-radius: 8px;
-    margin: 6px 3px 0;
+    border-radius: 5px;
+}
+*/
+
+window#waybar > .horizontal {
+    margin: 8px;
+    background-color: @background;
+    border-radius: 5px;
+    box-shadow: 2px 2px 4px @darker;
+}
+
+#custom-power-menu {
+    margin-right: 8px;
+    padding: 0 12px 0 10px;
 }
 
 #custom-launcher {
     padding: 2px 15px;
+    margin-left: 8px;
 }
 
 #workspaces {
@@ -111,7 +129,15 @@ window#waybar.hidden {
     animation-direction: alternate;
 }
 
+tooltip {
+    border-radius: 15px;
+    padding: 15px;
+    background-color: @background;
+    font-family: FiraCode Nerd Font;
+    color: @foreground;
+}
+
 label:focus {
-    background-color: #000000;
+    background-color: @background;
 }
 

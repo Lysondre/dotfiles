@@ -3,14 +3,18 @@ font_family FiraCode Nerd Font
 font_size 12.5
 
 # CUSTOM THEMING
-background_opacity 0.9
+background_opacity 0.90
 
 # ADVANCED
 editor nvim
+shell zsh
 
+window_padding_width 16
+
+detect_urls yes
 
 
 # BEGIN_KITTY_THEME
-# Rosé Pine Moon
+# Espresso
 include current-theme.conf
 # END_KITTY_THEME

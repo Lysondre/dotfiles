@@ -7,7 +7,7 @@
     // Choose the order of the modules
     "modules-right": ["pulseaudio", "network", "temperature", "keyboard-state", "tray"],
     "modules-center": ["clock"],
-    "modules-left": ["custom/launcher", "cpu", "memory", "battery"],
+    "modules-left": ["custom/power-menu", "custom/launcher", "cpu", "memory", "battery"],
 
     "keyboard-state": {
         "numlock": true,
@@ -23,7 +23,7 @@
         "spacing": 10
     },
     "clock": {
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "format": "{:%d %b, %H:%M}",
         "format-alt": "{:%a %b %d, %G}"
     },
@@ -101,7 +101,7 @@
         // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
     },
     "custom/launcher": {
-        "format": "󰣇",
+        "format": " 󰣇 ",
         "on-click": "wofi --show drun"
     },
     "wlr/workspaces": {
@@ -111,5 +111,9 @@
             "active": "",
             "default": ""
         }
+    },
+    "custom/power-menu": {
+        "format": " ⏻ ",
+        "on-click": "wlogout"
     }
 }

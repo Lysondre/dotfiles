@@ -8,9 +8,10 @@
 
 window#waybar {
     background-color: rgba(0, 0, 0, 0);
-    color: @foreground;
+    color: @secondary;
     transition-property: background-color;
     transition-duration: .5s;
+    opacity: 0.85;
 }
 
 window#waybar.hidden {
@@ -73,18 +74,12 @@ window#waybar.hidden {
     font-weight: bold;
 }
 
-/*
-.modules-left, .modules-center, .modules-right {
+.modules-left, .modules-right, .modules-center {
+    margin: 10px 20px;
     background-color: @background;
+    /* border: 2px solid @secondary; */
+    box-shadow: 2px 2px 4px #000;
     border-radius: 5px;
-}
-*/
-
-window#waybar > .horizontal {
-    margin: 8px;
-    background-color: @background;
-    border-radius: 5px;
-    box-shadow: 2px 2px 4px @darker;
 }
 
 #custom-power-menu {
@@ -134,7 +129,7 @@ tooltip {
     padding: 15px;
     background-color: @background;
     font-family: FiraCode Nerd Font;
-    color: @foreground;
+    color: @secondary;
 }
 
 label:focus {

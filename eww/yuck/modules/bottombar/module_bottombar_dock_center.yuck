@@ -1,0 +1,32 @@
+(defwidget module_bottombar_dock_center []
+    (box
+        (box
+            :halign "center"
+            :valign "center"
+            :space-evenly false
+            :spacing 15
+
+            (eventbox
+                :class "dock_center_launch_browser"
+                :width {round(DP_HEIGHT / BOX_SIZE_BOTTOM_BAR_C_V, 0)}
+                :height {round(DP_HEIGHT / BOX_SIZE_BOTTOM_BAR_C_V, 0)}
+                :onclick "${_BROWSER} &"
+
+                (box
+                    (label :class "icon" :text "󰈹")
+                )
+            )
+            
+            (eventbox
+                :class "dock_center_launch_right_mplayer"
+                :width {round(DP_HEIGHT / BOX_SIZE_BOTTOM_BAR_C_V, 0)}
+                :height {round(DP_HEIGHT / BOX_SIZE_BOTTOM_BAR_C_V, 0)}
+                :onclick "scripts/launcher/launch_right_mplayer.sh --toggle &"
+          
+                (box
+                    (label :class "icon" :text "󰝚")
+                )
+            )
+        )
+    )
+)

@@ -1,0 +1,38 @@
+(defwidget module_topbar_right []
+ 
+    ;; Container
+    (box
+        :halign "end"
+        :valign "center"
+        :space-evenly false
+        :spacing 10
+
+        ;; Date Container
+        (box
+            :class "bar_right_date"
+            :width {round(DP_WIDTH / 19, 0)}
+            :height {round(DP_HEIGHT / BOX_SIZE_TOP_BAR_C_V, 0)}
+
+            (box 
+                (label :class "label" :text "${DATE_DOW} / ${DATE_DAY}")
+            )
+        )
+
+        ;; Time Container
+        (box
+            :class "bar_right_time"
+            :width {round(DP_WIDTH / 16, 0)}
+            :height {round(DP_HEIGHT / BOX_SIZE_TOP_BAR_C_V, 0)}
+            
+            (box
+                :halign "center"
+                :valign "center"
+                :space-evenly false
+                :space 15
+
+                (label :class "time_icon" :text "")
+                (label :class "time_label" :text "${TIME_HOUR} : ${TIME_MIN}")
+            )
+        )
+    )
+)

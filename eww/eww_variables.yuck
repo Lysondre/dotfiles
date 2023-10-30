@@ -1,0 +1,71 @@
+
+
+;; Display Size
+(defvar DP_WIDTH "1920")
+(defvar DP_HEIGHT "1080")
+
+;; Time and Date
+(defpoll TIME_HOUR :interval "30s" "date +'%H'")
+(defpoll TIME_MIN  :interval "30s" "date +'%M'")
+(defpoll DATE_MER  :interval "1m" "date +'%p'")
+(defpoll DATE_DOW  :interval "1m" "date +'%a'")
+(defpoll DATE_MON  :interval "1m" "date +'%b'")
+(defpoll DATE_DAY  :interval "1m" "date +'%d'")
+
+;; Top bar
+(defvar BOX_SIZE_TOP_BAR_P_H "3.6")
+(defvar BOX_SIZE_TOP_BAR_P_V "18")
+(defvar BOX_SIZE_TOP_BAR_C_H "3.8")
+(defvar BOX_SIZE_TOP_BAR_C_V "26")
+
+;; Bottom bar
+(defvar BOX_SIZE_BOTTOM_BAR_P_H "2.8")
+(defvar BOX_SIZE_BOTTOM_BAR_P_V "14")
+(defvar BOX_SIZE_BOTTOM_BAR_C_H "3.6")
+(defvar BOX_SIZE_BOTTOM_BAR_C_V "20")
+
+;; Right mplayer
+(defvar BOX_SIZE_RIGHT_MPLAYER_P_H "5")
+(defvar BOX_SIZE_RIGHT_MPLAYER_P_V "1.5")
+(defvar BOX_SIZE_RIGHT_MPLAYER_C_H "5.5")
+(defvar BOX_SIZE_RIGHT_MPLAYER_C_V "1.55")
+
+;; Right mplayer
+(defvar SHOW_RIGHT_MPLAYER false)
+
+(defpoll UPTIME :interval "1m"
+  "uptime -p | awk '{print $1 \" \" $2 \" \" $3}' | sed -e s/,//g")
+
+(deflisten WS :initial "(box (label :text 'init'))"
+  `scripts/./workspaces.sh`)
+
+(defvar _BROWSER "firefox")
+
+;; Music status from mpris
+(defpoll MPRIS_STATUS :interval "2s"
+  "scripts/mpris.sh --status")
+
+(defpoll MPRIS_TITLE :interval "2s"
+  "scripts/mpris.sh --title")
+
+(defpoll MPRIS_ARTIST :interval "2s"
+  "scripts/mpris.sh --artist")
+
+(defvar MPRIS_COVER_DEFAULT
+  "images/music.png")
+
+(deflisten MPRIS_COVER :initial "images/music.png"
+  `scripts/./mpris.sh --cover`)
+
+(deflisten MPRIS_COVER_BLUR :initial ""
+  `scripts/convert_images/./mpris_blur.sh`)
+
+(defpoll MPRIS_PLAYER_NAME :interval "2s"
+  "scripts/mpris.sh --player_name")
+
+(defpoll MPRIS_PLAYER_ICON :interval "2s"
+  "scripts/mpris.sh --player_icon")
+
+;; Volume
+(defpoll VOLUME_LEVEL :interval "2s"
+  "scripts/audio.sh --get_volume")

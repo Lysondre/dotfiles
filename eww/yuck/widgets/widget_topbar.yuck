@@ -1,0 +1,46 @@
+(defwidget widget_topbar []
+
+    ;; Main container
+    (box :halign "center" :space-evenly false
+        (box
+            :class "topbar_root_box"
+
+            (box
+                :halign "center"
+                :space-evenly false
+
+                ;; Left part
+                (box :halign "center" :valign "center"
+                     :class "topbar_left"
+                     :width {round(DP_WIDTH / BOX_SIZE_TOP_BAR_P_H, 0)}
+                     :height {round(DP_HEIGHT / BOX_SIZE_TOP_BAR_P_V, 0)}
+
+                    (box
+                        :halign "center"
+                        :valign "center"
+                        :width {round(DP_WIDTH / BOX_SIZE_TOP_BAR_C_H, 0)}
+                        :height {round(DP_HEIGHT / BOX_SIZE_TOP_BAR_C_V, 0)}
+                    
+                        (module_topbar_left) 
+                    )
+                )
+
+                ;; Right part
+                (box
+                    :class "topbar_right"
+                    :halign "center"
+                    :valign "center"
+                    :width {round(DP_WIDTH / BOX_SIZE_TOP_BAR_P_H, 0)}
+                    :height {round(DP_HEIGHT / BOX_SIZE_TOP_BAR_P_V, 0)}
+
+                    (box :halign "center" :valign "center"
+                         :width {round(DP_WIDTH / BOX_SIZE_TOP_BAR_C_H, 0)}
+                         :height {round(DP_HEIGHT / BOX_SIZE_TOP_BAR_C_V, 0)}
+
+                        (module_topbar_right)
+                    )
+                )
+            )
+        )
+    )
+)

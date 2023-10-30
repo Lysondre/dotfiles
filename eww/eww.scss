@@ -1,0 +1,11 @@
+* {
+    all: unset;
+    font-family: FiraCode Nerd Font;
+}
+
+/* Color Scheme */
+@import 'scss/colors/purple.scss';
+
+@import 'scss/style_topbar.scss';
+@import 'scss/style_bottombar.scss';
+@import 'scss/style_right_mplayer.scss';

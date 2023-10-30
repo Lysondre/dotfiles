@@ -1,0 +1,69 @@
+.window_topbar {
+    background-color: rgba($primary, 0.5)
+}
+
+.topbar_root_box {
+    transition: 300ms ease;
+    margin: 0.6rem;
+}
+
+.topbar_left {
+    background-color: $bg;
+    border-radius: 1rem 0rem 0rem 1rem;
+    box-shadow: 0rem 0rem 0.4rem $bg;
+    transition: 300ms ease;
+}
+
+.topbar_right {
+    background-color: $bg;
+    border-radius: 0rem 1rem 1rem 0rem;
+    box-shadow: 0rem 0rem 0.4rem $bg;
+    transition: 300ms ease;
+}
+
+.bar_left_uptime {
+    background-color: $primary;
+    border-radius: 1rem;
+
+    .label {
+        color: $primary-alt;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+}
+
+.bar_left_workspaces {
+    background-color: $bg-alt;
+    border-radius: 1rem;
+}
+
+.bar_right_date {
+    background-color: $primary;
+    border-radius: 1rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+
+    .label {
+        color: $primary-alt;
+        font-size: 1.2rem;
+        font-style: italic;
+        font-weight: bold;
+    }
+}
+
+.bar_right_time {
+    background-color: $primary;
+    border-radius: 1rem;
+
+    .time_icon {
+        color: $primary-alt;
+        font-size:1.2rem;
+        margin-right: 1rem;
+    }
+
+    .time_label {
+        color: $primary-alt;
+        font-size: 1.2rem;
+        font-weight: bold;
+    }
+}

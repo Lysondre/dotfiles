@@ -1,0 +1,42 @@
+(defwidget widget_bottom_bar []
+    (box
+        (box
+            :class "bottombar_root_box"
+
+            (box
+                :class "bottombar_dock_center"
+                :halign "center"
+                :valign "center"
+                :width {round(DP_WIDTH / BOX_SIZE_BOTTOM_BAR_P_H, 0)}
+                :height {round(DP_HEIGHT / BOX_SIZE_BOTTOM_BAR_P_V, 0)}
+
+                (centerbox
+                    (box
+                        :class "dock_center_bumper_left"
+                        :halign "start"
+                        :valign "center"
+                        :width {round(DP_WIDTH / 60, 0)}
+                        :height {round(DP_HEIGHT / BOX_SIZE_BOTTOM_BAR_P_V, 0)}
+                    )
+
+                    (box
+                        :halign "center"
+                        :valign "center"
+                        :width {round(DP_WIDTH / BOX_SIZE_BOTTOM_BAR_C_H, 0)}
+                        :height {round(DP_HEIGHT / BOX_SIZE_BOTTOM_BAR_C_V, 0)}
+
+                        (module_bottombar_dock_center)
+                    )
+
+                    (box
+                        :class "dock_center_bumper_right"
+                        :halign "end"
+                        :valign "center"
+                        :width {round(DP_WIDTH / 60, 0)}
+                        :height {round(DP_HEIGHT / BOX_SIZE_BOTTOM_BAR_P_V, 0)}
+                    )
+                )
+            )
+        )
+    )
+)

@@ -28,5 +28,19 @@
                 )
             )
         )
+        (box
+            (eventbox
+                :halign "end"
+                :valign "center"
+                :class "dock_center_launch_powermenu"
+                :width {round(DP_HEIGHT / BOX_SIZE_BOTTOM_BAR_C_V, 0)}
+                :height {round(DP_HEIGHT / BOX_SIZE_BOTTOM_BAR_C_V, 0)}
+                :onclick "scripts/launcher/launch_powermenu.sh --toggle &"
+
+                (box
+                    (label :class "icon" :text "⏻") 
+                )
+            )
+        )
     )
 )

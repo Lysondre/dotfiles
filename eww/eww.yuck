@@ -5,6 +5,7 @@
 (include "yuck/widgets/widget_topbar.yuck")
 (include "yuck/widgets/widget_bottombar.yuck")
 (include "yuck/widgets/widget_right_mplayer.yuck")
+(include "yuck/widgets/widget_powermenu.yuck")
 
 (include "yuck/modules/topbar/module_topbar_left.yuck")
 (include "yuck/modules/topbar/module_topbar_right.yuck")
@@ -12,3 +13,5 @@
 (include "yuck/modules/bottombar/module_bottombar_dock_center.yuck")
 
 (include "yuck/modules/right_mplayer/module_right_mplayer_uwustagram.yuck")
+
+(include "yuck/modules/powermenu/module_powermenu.yuck")

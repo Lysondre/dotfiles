@@ -1,0 +1,43 @@
+(defwidget module_powermenu []
+    (box
+        (box
+            :halign "center"
+            :valign "center"
+            :space-evenly false
+            :spacing 15
+
+            (eventbox
+                :class "powermenu_return_button"
+                :width {round(DP_HEIGHT / BOX_SIZE_POWERMENU_C_V, 0)}
+                :height {round(DP_HEIGHT / BOX_SIZE_POWERMENU_C_V, 0)}
+                :onclick "scripts/launcher/launch_powermenu.sh --toggle &"
+          
+                (box
+                    (label :class "icon" :text "")
+                )
+            )
+
+            (eventbox
+                :class "powermenu_reboot_button"
+                :width {round(DP_HEIGHT / BOX_SIZE_POWERMENU_C_V, 0)}
+                :height {round(DP_HEIGHT / BOX_SIZE_POWERMENU_C_V, 0)}
+                :onclick "scripts/powermenu.sh --reboot"
+                
+                (box
+                    (label :class "icon" :text "󰜉")
+                )
+            )
+
+            (eventbox
+                :class "powermenu_shutdown_button"
+                :width {round(DP_HEIGHT / BOX_SIZE_POWERMENU_C_V, 0)}
+                :height {round(DP_HEIGHT / BOX_SIZE_POWERMENU_C_V, 0)}
+                :onclick "scripts/powermenu.sh --shutdown"
+
+                (box
+                    (label :class "icon" :text ";-;")
+                )
+            )
+        )
+    )
+)

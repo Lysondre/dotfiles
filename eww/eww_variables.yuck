@@ -30,6 +30,12 @@
 (defvar BOX_SIZE_RIGHT_MPLAYER_C_H "5.5")
 (defvar BOX_SIZE_RIGHT_MPLAYER_C_V "1.55")
 
+;; Bottom bar
+(defvar BOX_SIZE_POWERMENU_P_H "5")
+(defvar BOX_SIZE_POWERMENU_P_V "8")
+(defvar BOX_SIZE_POWERMENU_C_H "5")
+(defvar BOX_SIZE_POWERMENU_C_V "11")
+
 ;; Right mplayer
 (defvar SHOW_RIGHT_MPLAYER false)
 

@@ -1,28 +1,42 @@
+.window_powermenu {
+    background-color: rgba($secondary, 0.5);
+}
 
-.bottom_bar_root_box {
+.powermenu_root_box {
     transition: 300ms ease;
 }
 
-.bottombar_dock_center {
+.powermenu_dock {
     background-color: $bg;
     border-radius: 1rem;
     box-shadow: 0rem 0rem 0.4rem $shadow;
 }
 
-.dock_center_bumper_left {
+.powermenu_return_button {
     background-color: $bg-alt;
-    border-radius: 1rem 0rem 0rem 1rem;
+    border-radius: 1rem;
+    transition: 200ms ease;
+
+    .icon {
+        color: $green;
+        font-size: 3.6rem;
+        padding-right: 0.5rem;
+    }
+
+    &:hover {
+        opacity: 0.5;
+    }
 }
 
-.dock_center_launch_browser {
+.powermenu_reboot_button {
     background-color: $bg-alt;
     border-radius: 1rem;
     transition: 200ms ease;
 
     .icon {
         color: $secondary-alt;
-        font-size: 2.8rem;
-        padding-right: 0.5rem;
+        font-weight: bold;
+        font-size: 4.4rem;
     }
 
     &:hover {
@@ -30,31 +44,15 @@
     }
 }
 
-.dock_center_launch_right_mplayer {
-    background-color: $bg-alt;
-    border-radius: 1rem;
-    transition: 300ms ease;
-
-    .icon {
-        color: $secondary;
-        font-size: 2.8rem;
-        padding-right: 0.5rem;
-    }
-
-    &:hover {
-        opacity: 0.5; 
-    }
-}
-
-.dock_center_launch_powermenu {
+.powermenu_shutdown_button {
     background-color: $bg-alt;
     border-radius: 1rem;
     transition: 200ms ease;
 
     .icon {
         color: $secondary;
+        font-weight: bold;
         font-size: 2.8rem;
-        padding-right: 0.5rem;
     }
 
     &:hover {
@@ -62,7 +60,3 @@
     }
 }
 
-.dock_center_bumper_right {
-    background-color: $bg-alt;
-    border-radius: 0rem 1rem 1rem 0rem;
-}

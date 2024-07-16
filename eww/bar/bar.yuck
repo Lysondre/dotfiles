@@ -1,0 +1,82 @@
+
+(defwindow bar
+  :monitor 0
+  :stacking "fg"
+  :geometry (geometry
+    :height "3%"
+    :width "100%"
+  :anchor "center bottom")
+  :exclusive true
+  
+  (bar_layout)
+)
+
+(defwidget bar_layout []
+  (box :class "bar-container"
+    
+    (centerbox :orientation "h"
+      :class "bar-layout"
+      :space-evenly false
+      
+      (box
+        :space-evenly false
+        
+        (bar_launcher_btn)
+        (bar_ide_btn)
+        (hub_data)
+      )
+      (bar_time)
+      (bar_power_btn)
+    )
+  )
+)
+
+(defwidget bar_time []
+  (button :class "bar-time"
+    :onclick "eww open --toggle hub"
+    
+    (box
+      :space-evenly false
+      :spacing 10
+      
+      (label :text "${time.hour}:${time.min}")
+      (label :text "|")
+      (label :text "${date.month} ${date.day}")
+    )
+  )
+)
+
+(defwidget bar_power_btn []
+  (button :class "bar-power-btn"
+    :onclick "eww open --toggle powermenu"
+    :halign "end"
+    "󰐥"
+  )
+)
+
+(defwidget bar_launcher_btn []
+  (button :class "bar-launcher-btn"
+    :onclick "wofi &"
+    :halign "start"
+    "󰍉"
+  )
+)
+
+(defwidget bar_ide_btn []
+  (button :class "bar-ide-btn"
+    :onclick "clion &"
+    :halign "start"
+    ""
+  )
+)
+
+(defwidget hub_data []
+  (box
+    (circular-progress
+      :clockwise false
+      :start-at 0
+      :value 40
+      :thickness 20
+    )
+  )
+)

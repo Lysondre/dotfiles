@@ -1,0 +1,62 @@
+
+(defwindow powermenu
+  :monitor 0
+  :stacking "fg"
+  :geometry (geometry
+    :width "3%"
+    :height "6%"
+    :anchor "bottom right"
+  )
+  
+  (powermenu_layout)
+)
+
+(defwidget powermenu_layout []
+  (box :class "powermenu-container"
+    
+    (box :class "powermenu-layout"
+      :orientation "v"
+      :space-evenly false
+      
+      (shutdown_btn)
+      (restart_btn)
+      (logout_btn)
+      (lock_btn)
+      (close_btn)
+    )
+  )
+)
+
+(defwidget shutdown_btn []
+  (button :class "shutdown-btn first"
+    :onclick "shutdown now"
+    "󰐥"
+  )
+)
+
+(defwidget restart_btn []
+  (button :class "restart-btn"
+    :onclick "reboot"
+  "󰜉")
+)
+
+(defwidget logout_btn []
+  (button :class "logout-btn"
+    :onclick "loginctl kill-session self"
+    "󰍃"
+  )
+)
+
+(defwidget lock_btn []
+  (button :class "lock-btn"
+    :onclick "hyprlock --immediate"
+    ""
+  )
+)
+
+(defwidget close_btn []
+  (button :class "close-btn last"
+    :onclick "eww close powermenu"
+    "󰕍"
+  )
+)

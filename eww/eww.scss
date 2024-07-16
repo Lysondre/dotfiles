@@ -1,0 +1,12 @@
+* {
+    all: unset;
+    font-family: Roboto, "JetBrainsMono Nerd Font";
+}
+
+@import "colors";
+@import "mixins.scss";
+
+// @import "./powermenu/powermenu.scss";
+@import "./bar/bar.scss";
+@import "./powermenu/powermenu.scss";
+@import "./hub/hub.scss";

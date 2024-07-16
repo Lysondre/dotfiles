@@ -1,0 +1,6 @@
+(defpoll time :interval "5s"
+`date +'{"hour": "%H", "min": "%M"}'`)
+
+(defpoll date :interval "10m"
+`date +'{"day": "%d", "month": "%B"}'`)
+

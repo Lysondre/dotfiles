@@ -1,0 +1,51 @@
+@define-color background #111111;
+@define-color accent #F2415B;
+@define-color foreground #E3DFCF;
+
+window {
+	font-size: 32px;
+}
+
+#outer-box {
+	background-color: #111111;
+	border: 1px solid white;
+}
+
+#scroll {
+	margin-top: 10px;
+}
+
+#inner-box {
+}
+
+/* selection highlight */
+#entry {
+	padding: 0.25em;
+	background: @light1;
+}
+
+#entry:selected { 
+	border-top: 1px solid @accent;
+	border-bottom: 1px solid @accent;
+	color: @accent;
+}
+
+/* list item text */
+#text {
+	color: white;
+}
+
+#text:selected {
+	color: @accent;
+}
+
+#input {
+	color: white;
+	border: none;
+	background-color: @background;
+}
+
+image {
+	margin-left: 0.25em;
+	margin-right: 0.25em;
+}

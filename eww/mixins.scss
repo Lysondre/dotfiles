@@ -1,0 +1,23 @@
+@mixin window {
+    background: $surface;
+    border-radius: 10px;
+    box-shadow: 0px 4px 8px $surface;
+    color: $on-surface;
+}
+
+@mixin btn {
+    background: $surface-container;
+    color: $on-primary-container;
+    border-radius: 10px;
+    padding: 4px 12px;
+    margin: 5px 10px;
+    transition: all 0.2s ease-in-out;
+
+    &:hover {
+        background-color: mix($surface-container, white, 92%);
+    }
+
+    &:active {
+        background-color: mix($surface-container, white, 85%);
+    }
+}

@@ -1,0 +1,6 @@
+mode=drun
+allow_images=true
+width=61.8%
+heigh=61.8%
+exec_search=true
+always_parse_args=true

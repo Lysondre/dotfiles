@@ -1,0 +1,24 @@
+(defwindow hub
+  :monitor 0
+  :stacking "fg"
+  :geometry (geometry
+    :width "10%"
+    :height "10%"
+    :anchor "center bottom"
+  )
+  
+  (hub_layout)
+)
+
+(defwidget hub_layout []
+  (box :class "hub-container"
+    (box :class "hub-layout"
+      :orientation "v"
+      :space-evenly false
+      
+      (box :class "hub-element"
+        (calendar)
+      )
+    )
+  )
+)

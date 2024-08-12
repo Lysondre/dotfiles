@@ -4,3 +4,4 @@
 (defpoll date :interval "10m"
 `date +'{"day": "%d", "month": "%B"}'`)
 
+(defpoll playing :interval "2s" "playerctl status")

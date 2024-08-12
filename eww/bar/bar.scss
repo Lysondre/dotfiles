@@ -1,10 +1,39 @@
 .bar-container {
-    @include window;
-    border-radius: 15px 15px 0 0;
+	@include window;
+	margin: 5px 10px 0px 10px;
+	border-bottom-left-radius: 0px;
+	border-bottom-right-radius: 0px;
 }
 
 /* Button Styling */
 .bar-container button {
-    @include btn;
+	@include btn;
 }
 
+.tray menu {
+	border-radius: 10px;
+	padding: 5px 0px;
+
+	background-color: rgba(0, 0, 0, 0.8);
+
+	>menuitem {
+		padding: 0px 5px;
+
+		&:disabled label {
+			color: gray;
+		}
+
+		&:hover {
+			background-color: #0e4679;
+		}
+	}
+
+	separator {
+		background-color: #222222;
+		padding-top: 1px;
+
+		&:last-child {
+			padding: unset;
+		}
+	}
+}

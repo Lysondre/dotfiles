@@ -2,8 +2,8 @@
   :monitor 0
   :stacking "fg"
   :geometry (geometry
-    :width "10%"
-    :height "10%"
+    :width "50%"
+    :height "70%"
     :anchor "center bottom"
   )
   
@@ -11,14 +11,94 @@
 )
 
 (defwidget hub_layout []
-  (box :class "hub-container"
-    (box :class "hub-layout"
+  (box 
+    :class "hub-container"
+
+    (box 
+      :class "hub-layout"
       :orientation "v"
       :space-evenly false
-      
-      (box :class "hub-element"
-        (calendar)
+      :spacing 10
+
+      (box
+        :orientation "h"
+        :valign "start"
+        :space-evenly false
+        :spacing 10
+
+        (box :class "hub-element"
+          :halign "start"
+
+          (calendar)
+        )
+
+        (box 
+          :class "hub-element"
+          :halign "start"
+          :spacing 10
+
+          (hub-metric
+            :value {EWW_CPU.avg}
+            :icon ""
+          )
+
+          (hub-metric
+            :value {(EWW_RAM.used_mem / EWW_RAM.total_mem) * 100}
+            :icon ""
+          )
+        )
+      )
+
+      (box
+        :class "hub-element"
+        :orientation "h"
+        :valign "start"
+        :space-evenly false
+        :spacing 10
+
+        (hub-player)
       )
     )
   )
+)
+
+(defwidget hub-metric [?value icon]
+  (circular-progress
+    :class "hub-metric"
+    :value {round(value, 0)}
+    :thickness 5
+    :height 50
+    :width 50
+    :start-at 25
+
+    (label :text icon)
+  )
+)
+
+(defwidget hub-player []
+  (box
+    :orientation "v"
+
+    (hub-player-buttons)
+    (hub-player-progress)
+  )
+)
+
+(defwidget hub-player-buttons []
+    (box
+      :orientation "h"
+      :halign "center"
+      
+      (button :onclick "playerctl previous" "󰒮")
+      (button :onclick "${playing == 'Playing' ? 'playerctl pause' : 'playerctl play'}" "${playing == 'Playing' ? '󰓛' : '󰐊'}")
+      (button :onclick "playerctl next" "󰒭")
+    )
+)
+
+(defwidget hub-player-progress []
+    (progress
+      :value 20
+      :orientation "h"
+      :width 50
+    )
 )

@@ -3,8 +3,8 @@
   :monitor 0
   :stacking "fg"
   :geometry (geometry
-    :height "3%"
-    :width "100%"
+    :height "5%"
+    :width "50%"
   :anchor "center bottom")
   :exclusive true
   
@@ -14,42 +14,60 @@
 (defwidget bar_layout []
   (box :class "bar-container"
     
-    (centerbox :orientation "h"
+    (centerbox 
+      :orientation "h"
       :class "bar-layout"
-      :space-evenly false
-      
-      (box
-        :space-evenly false
-        
-        (bar_launcher_btn)
-        (bar_ide_btn)
-        (hub_data)
-      )
+     
       (bar_time)
-      (bar_power_btn)
+      (bar_fav_apps)
+      (bar_extras)
     )
   )
 )
 
 (defwidget bar_time []
-  (button :class "bar-time"
-    :onclick "eww open --toggle hub"
-    
-    (box
-      :space-evenly false
-      :spacing 10
-      
+  (box
+    :halign "start"
+    :space-evenly false
+
+    (button :class "bar-time"
+      :onclick "eww open --toggle hub"
+
       (label :text "${time.hour}:${time.min}")
-      (label :text "|")
-      (label :text "${date.month} ${date.day}")
     )
+
+    (bar_separator)
+  )
+)
+
+(defwidget bar_fav_apps []
+  (box
+    :space-evenly false
+    :orientation "h"
+        
+    (bar_ide_btn)
+  )
+)
+
+(defwidget bar_extras []
+  (box
+    :space-evenly false
+    :orientation "h"
+    :halign "end"
+    
+    (bar_separator)
+    (systray
+      :orientation "h"
+    )
+    (bar_separator)
+    (bar_launcher_btn)
+    (bar_power_btn)
   )
 )
 
 (defwidget bar_power_btn []
   (button :class "bar-power-btn"
     :onclick "eww open --toggle powermenu"
-    :halign "end"
     "󰐥"
   )
 )
@@ -57,26 +75,17 @@
 (defwidget bar_launcher_btn []
   (button :class "bar-launcher-btn"
     :onclick "wofi &"
-    :halign "start"
     "󰍉"
   )
 )
 
 (defwidget bar_ide_btn []
   (button :class "bar-ide-btn"
-    :onclick "clion &"
-    :halign "start"
+    :onclick "code &"
     ""
   )
 )
 
-(defwidget hub_data []
-  (box
-    (circular-progress
-      :clockwise false
-      :start-at 0
-      :value 40
-      :thickness 20
-    )
-  )
+(defwidget bar_separator []
+  (label :text "|")
 )

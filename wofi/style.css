@@ -4,11 +4,13 @@
 
 window {
 	font-size: 32px;
+	border-radius: 10px;
 }
 
 #outer-box {
-	background-color: #111111;
-	border: 1px solid white;
+	border: 10px solid #181A1B;
+	border-radius: 10px;
+	background-color: #24283B;
 }
 
 #scroll {
@@ -21,7 +23,7 @@ window {
 /* selection highlight */
 #entry {
 	padding: 0.25em;
-	background: @light1;
+	background-color: #24283B;
 }
 
 #entry:selected { 
@@ -40,9 +42,8 @@ window {
 }
 
 #input {
-	color: white;
 	border: none;
-	background-color: @background;
+	background-color: #24283B;
 }
 
 image {

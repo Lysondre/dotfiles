@@ -1,23 +1,18 @@
 @mixin window {
-    background: $surface;
-    border-radius: 10px;
-    box-shadow: 0px 4px 8px $surface;
-    color: $on-surface;
+	background-color: rgba($surface, 0.9);
+	border-radius: 10px;
+	box-shadow: 0px 2px 4px black;
+	color: $on-surface;
 }
 
 @mixin btn {
-    background: $surface-container;
-    color: $on-primary-container;
-    border-radius: 10px;
-    padding: 4px 12px;
-    margin: 5px 10px;
-    transition: all 0.2s ease-in-out;
+	min-width: 25px;
+	color: $on-surface;
+	border-radius: 10px;
+	padding: 6px;
+	margin: 7px;
 
-    &:hover {
-        background-color: mix($surface-container, white, 92%);
-    }
-
-    &:active {
-        background-color: mix($surface-container, white, 85%);
-    }
+	&:hover {
+		background-color: rgba($surface, 0.9);
+	}
 }

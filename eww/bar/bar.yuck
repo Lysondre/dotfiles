@@ -46,6 +46,9 @@
     :orientation "h"
         
     (bar_ide_btn)
+    (bar_obsidian_btn)
+    (bar_zotero_btn)
+    (bar_brave_btn)
   )
 )
 
@@ -81,8 +84,29 @@
 
 (defwidget bar_ide_btn []
   (button :class "bar-ide-btn"
-    :onclick "code &"
-    ""
+    :onclick "kitty -e nvim ~ &"
+    ""
+  )
+)
+
+(defwidget bar_obsidian_btn []
+  (button :class "bar-obsidian-btn"
+    :onclick "obsidian &"
+    ""
+  )
+)
+
+(defwidget bar_zotero_btn []
+  (button :class "bar-zotero-btn"
+    :onclick "zotero &"
+    "󰰶"
+  )
+)
+
+(defwidget bar_brave_btn []
+  (button :class "bar-brave-btn"
+    :onclick "brave &"
+    ""
   )
 )
 

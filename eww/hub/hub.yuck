@@ -37,14 +37,21 @@
           :halign "start"
           :spacing 10
 
-          (hub-metric
-            :value {EWW_CPU.avg}
-            :icon ""
-          )
+          (cpu-metrics)
+
+        )
+        (box
+          :orientation "v"
+          :class "hub-element"
+          :spacing 10
+
+          (label :text "  - RAM")
+
+          (box)
 
           (hub-metric
             :value {(EWW_RAM.used_mem / EWW_RAM.total_mem) * 100}
-            :icon ""
+            :icon "${round((EWW_RAM.used_mem / EWW_RAM.total_mem) * 100, 0)}%"
           )
         )
       )
@@ -63,16 +70,64 @@
 )
 
 (defwidget hub-metric [?value icon]
-  (circular-progress
+  (box
     :class "hub-metric"
-    :value {round(value, 0)}
-    :thickness 5
-    :height 50
-    :width 50
-    :start-at 25
 
-    (label :text icon)
+    (circular-progress
+      :value {round(value, 0)}
+      :thickness 5
+      :height 50
+      :width 50
+      :start-at 25
+
+      (label :text icon)
+    )
   )
+)
+
+;; TODO: make display sensitive to number of cores
+(defwidget cpu-metrics []
+  (box
+    :orientation "v"
+    :spacing 10
+
+    (label :text " CPU - ${round(EWW_CPU.avg, 2)}% AVG")
+
+    (box
+      :orientation "h"
+      :spacing 10
+
+      (cpu-metric :id 0)
+      (cpu-metric :id 1)
+      (cpu-metric :id 2)
+      (cpu-metric :id 3)
+      (cpu-metric :id 4)
+      (cpu-metric :id 5)
+      (cpu-metric :id 6)
+      (cpu-metric :id 7)
+    )
+    (box
+      :orientation "h"
+      :spacing 10
+
+      (cpu-metric :id 8)
+      (cpu-metric :id 9)
+      (cpu-metric :id 10)
+      (cpu-metric :id 11)
+      (cpu-metric :id 12)
+      (cpu-metric :id 13)
+      (cpu-metric :id 14)
+      (cpu-metric :id 15)
+    )
+  )
+)
+
+(defwidget cpu-metric [?id]
+      (hub-metric
+        :value {EWW_CPU.cores[id].usage}
+        :icon " ${id}
+${round(EWW_CPU.cores[id].usage, 0)}%"
+      )
 )
 
 (defwidget hub-player []

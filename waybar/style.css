@@ -1,0 +1,112 @@
+
+* {
+  border: none;
+  border-radius: 0;
+  font-family: "JetBrainsMono Nerd Font";
+  font-size: 16px;
+  min-height: 0;
+}
+
+window#waybar {
+  background: yellow;
+  color: #313739;
+  background: linear-gradient(-60deg,
+    #F5F5F5 0%,
+    #F5F5F5 27.8%,
+    #A1A1A1 27.9%,
+    #F5F5F5 28%,
+    #F5F5F5 29.8%,
+    #A1A1A1 29.9%,
+    #F5F5F5 30%,
+    #F5F5F5 69.6%,
+    #F1F1F1 69.7%,
+    #E1E1E1 69.9%,
+    #D1D1D1 70%,
+    #F8F546 70%,
+    #F8F546 100%
+  );
+}
+
+#window {
+  font-weight: bold;
+}
+
+#workspaces {
+  padding: 3px;
+  margin: 3px;
+  border: 1px solid #657136;
+  border-radius: 5px;
+}
+
+#workspaces button {
+  padding: 0 1px;
+  background: transparent;
+  color: #A9AAA9;
+}
+
+#workspaces button.active {
+  color: #313739;
+}
+
+#workspaces button.focused {
+    color: black;
+    border-top: 2px solid #c9545d;
+}
+
+#mode {
+    background: #64727D;
+    border-bottom: 3px solid white;
+}
+
+#clock, #battery, #cpu, #memory, #network, #pulseaudio, #custom-spotify, #tray, #mode {
+    padding: 0 3px;
+    margin: 0 2px;
+}
+
+#clock {
+    font-weight: bold;
+}
+
+@keyframes blink {
+    to {
+        background-color: #ffffff;
+        color: black;
+    }
+}
+
+#cpu {
+}
+
+#memory {
+}
+
+#network {
+}
+
+#network.disconnected {
+    background: #f53c3c;
+}
+
+#pulseaudio {
+}
+
+#pulseaudio.muted {
+}
+
+#custom-spotify {
+    color: rgb(102, 220, 105);
+}
+
+#tray {
+}
+
+#tray-grp {
+  padding: 0 5px;
+  border: 1px solid #657136;
+  margin: 3px;
+  border-radius: 5px;
+}
+
+#custom-separator {
+  padding: 0 5px;
+}

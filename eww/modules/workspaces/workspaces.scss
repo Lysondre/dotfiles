@@ -1,0 +1,22 @@
+
+.workspaces {
+
+}
+
+.workspace-icon {
+  transition-duration: 300ms;
+  padding: 0 5px
+}
+
+.workspace-icon:hover {
+  transition-duration: 300ms;
+  color: $crimson;
+}
+
+.workspace-icon.active {
+  color: lightgreen;
+}
+
+.workspace-icon.inactive {
+
+}

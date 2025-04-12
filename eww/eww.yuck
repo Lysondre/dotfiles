@@ -1,0 +1,10 @@
+
+; General stuff
+(include "variables.yuck")
+
+; Modules
+(include "./modules/workspaces/workspaces.yuck")
+
+; Windows
+(include "./windows/bar/bar.yuck")
+(include "./windows/hub/hub.yuck")

@@ -1,0 +1,3 @@
+
+(defpoll active_workspace :interval "0.1s"
+         "./scripts/get_workspace.zsh")

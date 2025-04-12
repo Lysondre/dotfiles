@@ -1,0 +1,30 @@
+
+(defwindow bar
+  :monitor 0
+  :stacking "fg"
+  :geometry (geometry
+    :height "3%"
+    :width "40%"
+    :anchor "center top"
+  )
+  :exclusive true
+
+  (bar_layout)
+)
+
+(defwidget bar_layout []
+  (box :class "bar-container"
+    (centerbox :class "bar-layout"
+      (workspaces)
+      (clock)
+      (systray :halign "end")
+    )
+  )
+)
+
+(defwidget clock []
+  (box :class "clock" :halign "center"
+    (button :onclick "eww open --toggle hub" "${formattime(EWW_TIME, '%H:%M:%S')}")
+  )
+)
+

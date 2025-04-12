@@ -1,0 +1,16 @@
+
+(defwidget workspaces []
+  (box :class "workspaces" :halign "start"
+    (workspace_icon :id 1)
+    (workspace_icon :id 2)
+    (workspace_icon :id 3)
+    (workspace_icon :id 4)
+    (workspace_icon :id 5)
+  )
+)
+
+(defwidget workspace_icon [?id]
+  (box :halign "start"
+    (button :class "workspace-icon ${id == active_workspace ? 'active' : 'inactive'}" :onclick "scripts/set_workspace.zsh ${id}" "")
+  )
+)

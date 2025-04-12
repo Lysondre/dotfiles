@@ -1,0 +1,26 @@
+
+.bar menu {
+  background-color: $parchment;
+  color: $charcoal;
+  border: 3px solid $charcoal;
+  border-radius: 5px;
+  padding: 5px;
+}
+
+.bar-container {
+  background-color: $charcoal;
+  color: $parchment;
+  border-radius: 0 0 5px 5px;
+  padding: 0 5px 0 5px;
+}
+
+.clock button {
+  transition-duration: 300ms;
+  padding: 0 5px;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: mix($charcoal, $parchment, 90);
+  }
+}
+

@@ -1,0 +1,21 @@
+
+(defwindow hub
+  :monitor 0
+  :stacking "fg"
+  :geometry (geometry
+    :height "40%"
+    :width "40%"
+    :anchor "center top"
+  )
+  :exclusive false
+
+  (hub_layout)
+)
+
+(defwidget hub_layout []
+  (box :class "hub-container"
+    (box :class "hub-layout"
+      (label :text "hi")
+    )
+  )
+)

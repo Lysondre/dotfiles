@@ -1,0 +1,16 @@
+
+* {
+  all: unset;
+  font-family: Roboto, "JetBrainsMono Nerd Font"
+}
+
+/* General stuff */
+@import "colours";
+@import "mixins";
+
+/* Modules */
+@import "./modules/workspaces/workspaces.scss"
+
+/* Windows */
+@import "./windows/bar/bar.scss"
+@import "./windows/hub/hub.scss"

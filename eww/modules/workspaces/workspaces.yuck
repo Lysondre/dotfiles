@@ -1,6 +1,6 @@
 
 (defwidget workspaces []
-  (box :class "workspaces" :halign "start"
+  (box :class "workspaces" :valign "start" :orientation "v"
     (workspace_icon :id 1)
     (workspace_icon :id 2)
     (workspace_icon :id 3)
@@ -10,7 +10,7 @@
 )
 
 (defwidget workspace_icon [?id]
-  (box :halign "start"
+  (box :valign "start"
     (button :class "workspace-icon ${id == active_workspace ? 'active' : 'inactive'}" :onclick "scripts/set_workspace.zsh ${id}" "")
   )
 )

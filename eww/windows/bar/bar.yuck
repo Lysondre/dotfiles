@@ -3,9 +3,9 @@
   :monitor 0
   :stacking "fg"
   :geometry (geometry
-    :height "3%"
-    :width "40%"
-    :anchor "center top"
+    :height "100%"
+    :width "60px"
+    :anchor "center left"
   )
   :exclusive true
 
@@ -14,17 +14,54 @@
 
 (defwidget bar_layout []
   (box :class "bar-container"
-    (centerbox :class "bar-layout"
+    (centerbox :class "bar-layout" :orientation "v"
       (workspaces)
       (clock)
-      (systray :halign "end")
+      (right_bar_layout)
     )
   )
 )
 
 (defwidget clock []
-  (box :class "clock" :halign "center"
-    (button :onclick "eww open --toggle hub" "${formattime(EWW_TIME, '%H:%M:%S')}")
+  (box :class "clock"
+    (box :orientation "v"
+      (label :text "${formattime(EWW_TIME, '%H')}")
+      (label :text "|" :angle 90)
+      (label :text "${formattime(EWW_TIME, '%M')}")
+      (label :text "|" :angle 90)
+      (label :text "${formattime(EWW_TIME, '%S')}")
+    )
   )
 )
 
+(defwidget right_bar_layout []
+  (box :class "right-bar-layout"
+    :valign "end"
+    :orientation "v"
+    :space-evenly false
+
+    (systray :class "systray" :valign "end" :orientation "v")
+    (colorpicker)
+    (profile)
+  )
+)
+
+(defwidget profile []
+  (box :class "profile" :valign "end"
+    (button :onclick "eww open --toggle hub"
+      ""
+    )
+  )
+)
+
+(defwidget power []
+  (box :class "power" :valign "end"
+    (button :onclick "" "")
+  )
+)
+
+(defwidget colorpicker []
+  (box :class "colorpicker" :valign "end"
+    (button :onclick "hyprpicker | wl-copy" "")
+  )
+)

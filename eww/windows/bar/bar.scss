@@ -1,26 +1,61 @@
 
 .bar menu {
-  background-color: $parchment;
-  color: $charcoal;
-  border: 3px solid $charcoal;
-  border-radius: 5px;
-  padding: 5px;
+  // background-color: $parchment;
+  // color: $charcoal;
+  // border: 3px solid $charcoal;
+  // border-radius: 5px;
+  // padding: 5px;
 }
 
 .bar-container {
-  background-color: $charcoal;
-  color: $parchment;
-  border-radius: 0 0 5px 5px;
-  padding: 0 5px 0 5px;
+  @include window;
+  margin-right: 7;
 }
 
-.clock button {
-  transition-duration: 300ms;
-  padding: 0 5px;
-  border-radius: 5px;
+.clock {
+  // &:hover {
+  //   background-color: mix($charcoal, $parchment, 90);
+  // }
+}
+
+.right-bar-layout box {
+  margin-top: 15px;
+}
+
+.power button {
+  @include icon;
+}
+
+.colorpicker button {
+  @include icon;
+
+  transition: 300ms;
+  
+  padding: 5px;
+  margin: 5px;
+  padding-right: 8px;
+  border-radius: 20px;
 
   &:hover {
-    background-color: mix($charcoal, $parchment, 90);
+    background-color: mix($surface, $parchment, 90);
+  }
+}
+
+.systray {
+}
+
+.profile button {
+  background-image: url("/home/lysondre/Pictures/profile/Frostnova.600.2885219.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 25px;
+  margin: 5px;
+  padding: 7px;
+  transition: 300ms;
+  border: 1px solid $surface;
+
+  &:hover {
+    border: 1px solid lightgreen;
   }
 }
 
